@@ -1,5 +1,5 @@
 # Belatrix Test Solution
-This is the solution for the test for the Belatrix application.
+This is my solution for the test for the Belatrix application.
 
 ## Task 1: Material Design Stepper
 >Propón los pasos, clases, layouts y recursos que utilizarías para hacer un Stepper
@@ -8,7 +8,7 @@ reutilizable y que cumpla con los parámetros definidos en la guía de [material
 
 ### Solution
 First of all this is a huge task. So I'll put here 2 different ways to implement a stepper.
-![Stepper Task](preview-images/preview-stepper.png)
+<img src="preview-images/preview-stepper.png" alt="Stepper Task" height="500"/>
 
 #### 1. Using a third party library
 This in in my perspective the is best way (faster and simple) to build a material design stepper, cause as I've said before, this would be a really head each.
@@ -59,7 +59,7 @@ I can't find a way where I could decide to pick to go with this option.
 
 3. Build the content that will go inside each step when is active as you'll see in the following image.
 
-![Stepper Content](preview-images/preview-stepper-content.png)
+<img src="preview-images/preview-stepper-content.png" alt="Stepper Content" height="500"/>
 
 This content can be pretty simple. A text indicating some information or an edit text, and  two buttons, the continue button (RaisedButton) and the cancel button which will redirect you to the previous step (FlatButton), finally this item needs a larger connector line, a simple View item with the background color indicated in the guidelines.
 
@@ -172,7 +172,7 @@ Why use MVP?
 - Built J-unit test in an easier way, without framework mocking
 - And specially the future changes will be a lot easier.
 
-![MVP Graph](preview-images/mvp-graph.png)
+<img src="preview-images/mvp-grap.png" alt="MVP Graph" width="500"/>
 
 As you can see, the view notifies the presenter and in that moment the presenter request data to the model and finally this data is processed and the expected view method is called.
 
