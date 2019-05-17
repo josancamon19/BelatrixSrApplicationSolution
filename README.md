@@ -172,7 +172,7 @@ Why use MVP?
 - Built J-unit test in an easier way, without framework mocking
 - And specially the future changes will be a lot easier.
 
-<img src="preview-images/mvp-grap.png" alt="MVP Graph" width="500"/>
+<img src="preview-images/mvp-graph.png" alt="MVP Graph" width="500"/>
 
 As you can see, the view notifies the presenter and in that moment the presenter request data to the model and finally this data is processed and the expected view method is called.
 
