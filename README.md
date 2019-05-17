@@ -148,12 +148,57 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   }
 
 ```
-4. Visual Example
+
+Visual Example:
+
+![On Shake Action GIF](preview-images/onshakeaction.gif)
+
 
 ## Task 3: MVP + Clean Architecture
 >Explica cómo organizas en base a tu experiencia un proyecto en Android utilizando MVP e
 implementando Clean Architecture, menciona los paquetes que utilizarías y la distribución de
 módulos.
+
+First of all there is no a standard way for MVP and clean architecture. Each developer can manage the architectures in different ways.
+
+what is exactly MVP?
+
+MVP (Model - View - Presenter) is an architectural pattern that seeks primary to uncouple the logic
+of presentation of the views.
+
+Why use MVP?
+- MVP allow us to become independent from the framework.
+- Built a cleaner code
+- Built J-unit test in an easier way, without framework mocking
+- And specially the future changes will be a lot easier.
+
+![MVP Graph](preview-images/mvp-graph.png)
+
+As you can see, the view notifies the presenter and in that moment the presenter request data to the model and finally this data is processed and the expected view method is called.
+
+What is Clean Architecture?
+
+Robert C. Martin created what he considered a clean architecture, highlighting five important points that must always be met:
+
+1. Independent of frameworks
+2. Testable
+3. Independent from the UI
+4. Independent from the Database
+5. Independent from external factors
+
+With that in mind, our logic should not depend from any external library, and also we should be able to test our logic in an isolated way independently from the database or any kind of server.
+
+Modules:
+
+1. Data: Data sources, API's and repository
+2. Domain: Interactor package, use cases and entities, these things will define our system.
+3. Platform: Framework stuff, Activities and fragments.
+4. Presentation: presenter logic.
+
+Used libraries or packages:
+1. Dagger -> is a dependency injection framework, and is used mainly to reduce the coupling between the components (the classes) of our system.
+1. RxJava -> Instead of using callbacks to communicate between layers we can use  to provide the data upstream and let it handle thread scheduling for us. RxJava is basically a library for asynchronous and event-based programs. This is achieved by using observable, Iterator pattern and functional programming.
+
 
 ## Task 4: Compass Custom View
 >Diseña un custom view de una brújula utilizando canvas y pon el código que utilizarías en
@@ -291,3 +336,5 @@ So, I decided to implement the compass functionallity too, based on the accelero
 ```
 
 Visual Example:
+
+![Compass GIF](preview-images/compass.gif)
