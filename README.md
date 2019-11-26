@@ -74,7 +74,7 @@ This content can be pretty simple. A text indicating some information or an edit
 
 1. For this task I made use of the ```SensorManager``` class built-in android and implementing the ```SensorEventListener``` Interface in order to detect when the accelorementer sensor is triggered, registering the listener to the SensorManager in onResume and unregistering in OnPause.
 
-```
+```Java
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
   private SensorManager sensorManager;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
   - Throw an action that in this case is a debug log and simple toast indicating the speed.
   - Finally re assigning x, y, and z to the global variables.
 
-```
+```Java
 @Override
   public void onSensorChanged(SensorEvent event) {
       if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
@@ -211,7 +211,7 @@ Custom View steps:
 1. First I created the class CompassView and extended this class from View.
 2. Declared some global variables like the direction of the compass and 2 Paint objects.
 
-```
+```Java
 public class CompassView extends View {
 
     private Paint mPaintCircle;
@@ -223,7 +223,7 @@ public class CompassView extends View {
   - Initializing the circle Paint object and setting the color to gray.
   - Initializing the line Paint object and setting the color to red and a stroke width of 6.
 
-```
+```Java
 private void init(@Nullable AttributeSet attributeSet) {
         mPaintCircle = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaintCircle.setColor(Color.GRAY);
@@ -236,7 +236,7 @@ private void init(@Nullable AttributeSet attributeSet) {
 
 4. Implemented the 4 constructors.
 
-```
+```Java
 public CompassView(Context context) {
      super(context);
      init(null);
@@ -264,7 +264,7 @@ public CompassView(Context context) {
   - in this line ```canvas.drawCircle(cx, cy, radius, mPaintCircle); ``` the circle was drawn with the center x, center y, radius, and the Paint initiated before.
   - Finally the line is drew and updated based on the direction value, which is the north of the compass.
 
-```
+```Java
   @Override
    protected void onDraw(Canvas canvas) {
        super.onDraw(canvas);
@@ -300,7 +300,7 @@ public CompassView(Context context) {
 
 6.  update the direction and redraw the view using invalidate().
 
-```
+```Java
 public void update(float dir){
         direction = dir;
         invalidate();
@@ -311,7 +311,7 @@ At this time maybe you are thinking, that was so simple, and yes it was, I haven
 
 So, I decided to implement the compass functionallity too, based on the accelerometer and magnetic field sensor.
 
-```
+```Java
 @Override
  public void onSensorChanged(SensorEvent event) {
      switch (event.sensor.getType()) {
